@@ -16,10 +16,9 @@
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="actions d-flex justify-content-start gap-3">
     <%= f.submit "Log in", class:'btn btn-primary' %>
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
-<br/>
 
-<%= render "devise/shared/links" %>

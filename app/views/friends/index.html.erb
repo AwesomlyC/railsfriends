@@ -1,43 +1,52 @@
 
 <% content_for :title, "Friends" %>
 
+<% if user_signed_in? %>
 <h1>Friends</h1>
-
-<div id="friends">
-
-
-  <table class='table table-striped table-bordered table-hover'>
-    <thead class='table-dark'>
-      <tr>
-        <th scope='col'>First Name</th>
-        <th scope='col'>Last Name</th>
-        <th scope='col'>Email</th>
-        <th scope='col'>Phone</th>
-        <th scope='col'>Twitter</th>
-        <th scope='col'>User_ID</th>
-        <th scope='col' colspan='3'></th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <% @friends.each do |friend| %>
-        <% if friend.user == current_user %>
+  <div id="friends">
+    <table class='table table-striped table-bordered table-hover'>
+      <thead class='table-dark'>
         <tr>
-          <td><%= friend.first_name %></td>
-          <td><%= friend.last_name %></td>
-          <td><%= friend.email %></td>
-          <td><%= friend.phone %></td>
-          <td><%= friend.twitter %></td>
-          <td><%= friend.user_id %></td>
+          <th scope='col'>Full Name</th>
+          <th scope='col'>Email</th>
+          <th scope='col'>Phone</th>
+          <th scope='col'>Twitter</th>
+          <th scope='col'></th>
 
-          <td><%= link_to "Show", friend %></td>
-          <td><%= link_to "Edit", edit_friend_path(friend) %> </td>
-          <td><%= button_to "Destroy this friend", friend, method: :delete %></td>
         </tr>
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+        <% @friends.each do |friend| %>
+          <% if friend.user == current_user %>
+          <tr>
+            <td><%= link_to friend.first_name + " " + friend.last_name, friend %></td>
+            <td><%= friend.email %></td>
+            <td><%= friend.phone %></td>
+            <td><%= friend.twitter %></td>
 
-<%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>
+            <td><%= button_to "Destroy", friend, method: :delete , class:"btn btn-outline-danger btn-sm" %></td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to "New friend", new_friend_path, class:"btn btn-secondary" %>
+
+<% else %>
+<h1>Welcome to the Friend App w/ Ruby on Rails</h1>
+<p>
+  <% paragraph_1 = "Lorem ipsum odor amet, consectetuer adipiscing elit. Velit nostra diam hendrerit torquent suspendisse ex. Tellus lobortis dapibus varius potenti adipiscing himenaeos nisi sed. Dictumst nec imperdiet dignissim fermentum sociosqu sed orci blandit. Vitae nibh augue finibus nostra litora turpis mauris. Vel duis nibh elementum ornare ex." %>
+  <%= paragraph_1 %>
+</p>
+
+<p>
+  <% paragraph_2 = "Cubilia auctor massa inceptos enim quam imperdiet erat aliquet. Aptent magnis nascetur faucibus fames hendrerit tellus gravida tortor tincidunt? Platea est lectus egestas tellus parturient, fames interdum bibendum leo. Leo auctor proin non tempor ridiculus interdum! Rutrum amet adipiscing diam; suspendisse purus aenean ullamcorper non aliquam. Efficitur a penatibus laoreet cras quam metus urna. Massa pulvinar suspendisse ipsum sit purus. Vehicula habitant consequat purus aenean phasellus vitae et aptent. Nascetur inceptos a mattis; elit nulla morbi. Auctor dui dui fames ac dis iaculis tincidunt." %>
+
+  <%= paragraph_2 %>
+</p>
+
+
+
+
+ <% end %>

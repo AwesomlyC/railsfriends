@@ -6,7 +6,9 @@
 
 <br>
 
-<div>
-  <%= link_to "Show", @friend, class: "btn btn-secondary" %> 
+<div class='d-flex justify-content-start gap-3'>
+  <%= link_to "Show", @friend, class: "btn btn-outline-secondary" %> 
+  <%= button_to "Destroy", @friend, method: :delete , class:"btn btn-outline-danger" %>
   <%= link_to "Back", friends_path, class: "btn btn-dark" %>
 </div>
+
