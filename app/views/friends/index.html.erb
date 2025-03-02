@@ -14,23 +14,27 @@
         <th scope='col'>Email</th>
         <th scope='col'>Phone</th>
         <th scope='col'>Twitter</th>
+        <th scope='col'>User_ID</th>
         <th scope='col' colspan='3'></th>
 
       </tr>
     </thead>
     <tbody>
       <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
         <tr>
           <td><%= friend.first_name %></td>
           <td><%= friend.last_name %></td>
           <td><%= friend.email %></td>
           <td><%= friend.phone %></td>
           <td><%= friend.twitter %></td>
+          <td><%= friend.user_id %></td>
+
           <td><%= link_to "Show", friend %></td>
           <td><%= link_to "Edit", edit_friend_path(friend) %> </td>
-          <td>      <%= button_to "Destroy this friend", friend, method: :delete %>
-</td>
+          <td><%= button_to "Destroy this friend", friend, method: :delete %></td>
         </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
