@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Application for learning Ruby on Rails
 
-Things you may want to cover:
+## Technologies involved
+- Ruby
+- Ruby on Rails
+- Bootstrap
+- gemfile -> [devise](https://github.com/heartcombo/devise) (user authentication)
 
-* Ruby version
+### Requirements
+- Ruby 3.3.7+
+- Rails 8.0.1+
 
-* System dependencies
+### MVC (Model-View-Controller)
+- Model
+  - How Rails handle databases i.e. where all schemas/database are located
+- View
+  - Handle the display for all frontend. What is displayed to the user
+- Controller
+  - Handle the "logic" and a want to retrieve data from the model to display content to the view.
 
-* Configuration
 
-* Database creation
+### Partial
+- Reusable component for webpages.
+  - Common examples are navbar, footer, sidebar
 
-* Database initialization
+### CRUD Scaffold
+- rails g scaffold (database_name) (parameters --> first_name:string ...)
+- How Rails create CRUD methods.
 
-* How to run the test suite
+### [Associations](https://guides.rubyonrails.org/association_basics.html#types-of-associations)
+- Way to associate database tables together (similar in RDBMS)
+- belongs_to
+- has_one
+- has_many
+- has_many :through
+- has_one :through
+- has_and_belongs_to_many
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+### Tutorial Credits
+- [Learn Ruby on Rails - Full Course](https://www.youtube.com/watch?v=fmyvWz5TUWg)
