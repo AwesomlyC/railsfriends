@@ -7,6 +7,8 @@
 - Ruby on Rails
 - Bootstrap
 - gemfile -> [devise](https://github.com/heartcombo/devise) (user authentication)
+- Sublime Text
+- Git Bash
 
 ### Requirements
 - Ruby 3.3.7+
@@ -38,6 +40,11 @@
 - has_one :through
 - has_and_belongs_to_many
 
+### Common Commands
+- rails s (server)
+- rails db:migrate
+- rails g (generate) ...
+- rails g scaffold
 
 ### Tutorial Credits
 - [Learn Ruby on Rails - Full Course](https://www.youtube.com/watch?v=fmyvWz5TUWg)
